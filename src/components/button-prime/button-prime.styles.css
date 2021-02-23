@@ -1,0 +1,44 @@
+.button-prime {
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  outline: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.list-button {
+  height: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+  outline: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.button-prime:hover,
+.list-button:hover {
+  background-color: blue;
+}
+
+
+
