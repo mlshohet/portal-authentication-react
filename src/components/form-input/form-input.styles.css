@@ -8,6 +8,7 @@ button:focus {
 .input-container {
 	display: flex;
 	border: 2px solid #888;
+	color: #888;
 	flex-direction: row;
 	align-items: center;
 	padding-left: 10px;
@@ -17,6 +18,7 @@ button:focus {
 
 .form-input {
 	background: none;
+	position: relative;
 	border: none;
 	background-color: white;
 	font-size: 18px;
@@ -25,3 +27,26 @@ button:focus {
 	width: 100%;
 	border-radius: 5px;
 }
+
+.invalid {
+	display: flex;
+	border: 2px solid red;
+	color: #888;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 10px;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.invalid:focus {
+	display: flex;
+	border: 2px solid #888;
+	color: #888;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 10px;
+	margin: 5px;
+	border-radius: 5px;
+}
+

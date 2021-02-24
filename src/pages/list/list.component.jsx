@@ -18,12 +18,14 @@ const ToDoList = props => {
 
 	const handleInput = event => {
 		event.preventDefault();
+		console.log("From handle input: ", event);
 		setListItem(event.target.value);
 	};
 
 	const handleSave = event => {
 		event.preventDefault();
-		if (listItem) {
+		console.log(event.target);
+		if (listItem || (listItem && event.data === '\n')) {
 			setListItems([ ...listItems, listItem ]);
 			setListItem('');
 			document.getElementById('input').value = '';
@@ -49,17 +51,19 @@ const ToDoList = props => {
 
 	return (
 		<div className="list">
-			<div className="list-input-container">
+			<form className="list-input-container">
 				<FormInput 
 					id="input"
+					listInput
 					onChange={handleInput}
 				/>
 				<ButtonPrime 
 					list
 					onClick={handleSave}
 				>
-					Save</ButtonPrime>
-			</div>
+					Save
+				</ButtonPrime>
+			</form>
 			<div className="list-container">
 				{
 					listItems.map(item => (

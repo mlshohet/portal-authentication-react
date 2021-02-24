@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 15px;
   outline: none;
   border-radius: 5px 5px 5px 5px;
 }
@@ -38,6 +38,10 @@
 .button-prime:hover,
 .list-button:hover {
   background-color: blue;
+}
+
+.button-prime:disabled {
+  background-color: lightblue;
 }
 
 
