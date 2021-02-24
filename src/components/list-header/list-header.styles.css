@@ -1,30 +1,5 @@
-.list {
-	font-family: 'Ubuntu';
-	font-size: 11px;
-	width:100%;
-}
-
-.list-input-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	margin: 20px;
-}
-
-.list-container {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-.list-button {
-	width: 100px;
-}
-
 .list-header {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -53,9 +28,8 @@
 	display: flex;
 	justify-content: flex-end;
 	color: white;
-	font-size: 18px;
+	font-size: 23px;
 	margin-right: 50px;
-	cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
@@ -63,3 +37,6 @@
 		font-size: 3vw;
 	}
 } 
+
+
+

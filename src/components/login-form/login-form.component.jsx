@@ -18,28 +18,25 @@ const LoginForm = props => {
 	const [blurEmail, setBlurEmail] = useState(false);
 	const [blurPassword, setBlurPassword] = useState(false);
 
-	console.log("password out of handle:", password.length);
-
 	// useEffect hook is used to validate input!
-
-	// A regular expression is used to validate email
+	// Regex key for email.
 
 	useEffect(() => {
 		const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  		if (regex.test(email) && email.length < 50 || !blurEmail) {
+  		if (!blurEmail || (regex.test(email) && email.length < 50)) {
   			setValidatedEmail(true);
   		} else {
   			setValidatedEmail(false);
   		}
-	},[email]);
+	},[email, blurEmail]);
 
 	useEffect(() => {
-		if (password.length === 0 || !blurPassword || password.length > 3 && password.length < 16) {
+		if (!blurPassword || password.length > 3) {
 			setValidatedPassword(true);
 		} else {
 			setValidatedPassword(false);
 		}
-	},[password]);
+	},[password.length, blurPassword]);
 
 	// Validation functions for the onBlur event.
 
@@ -60,17 +57,16 @@ const LoginForm = props => {
 	 		setValidatedPassword(false);
 	 	}
 		setBlurPassword(true);
-		console.log("out of blur ",password.length);
 	};
 
 	// If route is set to "signin" the present component is rendered.
-	// If route changes (from submitting the form) the To Do List is rendered.
+	// If route changes from submitting the form, the To Do List is rendered.
 
 	return (
 		route === 'signin' ?
-			<div className="login">
-			<h1 className="title">RAPPTR LABS</h1>
-			<span className="tagline">Sign in with Email and Password</span>
+			<div className="login-container">
+			<h1 className="login-title">RAPPTR LABS</h1>
+			<span className="login-tagline">Sign in with Email and Password</span>
 			<form className="login-form">
 				<div className='form-input-container'>
 					<label className="label">Email</label>
@@ -86,6 +82,9 @@ const LoginForm = props => {
 						required 
 					/>
 					{
+						//A placeholder div is created with a zero width character to
+						// be replaced by the error message
+
 						!isValidatedEmail ?
 						<div className="failed-valid">
 							Please enter a valid email address.
@@ -118,6 +117,10 @@ const LoginForm = props => {
 					value="Login"
 					onClick={() => setRoute('to-do-list')}
 					disabled={
+
+						//Crucial validation here at the Submit level
+						
+						email === '' || password.length < 4 || 
 						!isValidatedEmail || !isValidatedPassword
 					}
 				>

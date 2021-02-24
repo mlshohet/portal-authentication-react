@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import FormInput from '../../components/form-input/form-input.component';
 import ListItem from '../../components/list-item/list-item.component';
 import ButtonPrime from '../../components/button-prime/button-prime.component';
+import Login from '../../pages/login/login.component';
+
 import './list.styles.css';
 
 const ToDoList = props => {
@@ -13,19 +15,20 @@ const ToDoList = props => {
 	// and input field is cleared.
 	// Some input validation is peformed as well.
 
+	// Routing also controlled with useState.
+
 	const [listItem, setListItem] = useState('');
 	const [listItems, setListItems] = useState([]);
+	const [route, setRoute] = useState('list');
 
 	const handleInput = event => {
 		event.preventDefault();
-		console.log("From handle input: ", event);
 		setListItem(event.target.value);
 	};
 
 	const handleSave = event => {
 		event.preventDefault();
-		console.log(event.target);
-		if (listItem || (listItem && event.data === '\n')) {
+		if (listItem) {
 			setListItems([ ...listItems, listItem ]);
 			setListItem('');
 			document.getElementById('input').value = '';
@@ -35,7 +38,7 @@ const ToDoList = props => {
 	};
 
 	// When deleting a memo, new array is returned and used to set new state
-	// Event listener is passed to the List Item component, below in jsx
+	// Event listener is passed to the List Item component, below in render.
 
 	const handleDelete = item => {
 		if (item) {
@@ -50,7 +53,16 @@ const ToDoList = props => {
 	// with the ListItem component
 
 	return (
+		route === 'list' ?
 		<div className="list">
+			<div className="list-header">
+				<span className="header-tagline">Don't Forget to Do Things!!!</span>
+					<div 
+						className="list-sign-out"
+						onClick={() => setRoute('login')}
+					>		SIGN OUT
+					</div>
+			</div> 
 			<form className="list-input-container">
 				<FormInput 
 					id="input"
@@ -77,7 +89,8 @@ const ToDoList = props => {
 				}
 			</div>
 		</div>
-
+		:
+		<Login />
 	);
 };
 

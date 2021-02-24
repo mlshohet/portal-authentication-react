@@ -5,7 +5,7 @@ import './login.styles.css';
 
 const Login = props => {
 	return (
-		<div className="login">
+		<div className="login-page">
 			<LoginForm />
 		</div>
 

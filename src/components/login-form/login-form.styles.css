@@ -1,3 +1,10 @@
+.login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .login-form {
 	display: flex;
 	flex-direction: column;
@@ -43,6 +50,25 @@
 	width: 100%;
 	border-radius: 5px;
 }
+
+.login-title {
+	font-family: 'Roboto';
+	font-size: 23;
+	font-size: 5vw;
+
+}
+
+.login-tagline {
+	font-family: 'Roboto';
+	font-size: 15px;
+	font-color: lightblue;
+}
+
+@media screen and (max-width: 800px) {
+	.login-title {
+		font-size: 12vw;
+	}
+} 
 
 .label {
 	margin-left: 20px;
