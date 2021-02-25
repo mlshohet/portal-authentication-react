@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/rapptr-submission/static/css/main.106c287c.chunk.css",
+    "main.js": "/rapptr-submission/static/js/main.7c13927c.chunk.js",
+    "main.js.map": "/rapptr-submission/static/js/main.7c13927c.chunk.js.map",
+    "runtime-main.js": "/rapptr-submission/static/js/runtime-main.df32256d.js",
+    "runtime-main.js.map": "/rapptr-submission/static/js/runtime-main.df32256d.js.map",
+    "static/js/2.5bd6d14d.chunk.js": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js",
+    "static/js/2.5bd6d14d.chunk.js.map": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js.map",
+    "index.html": "/rapptr-submission/index.html",
+    "static/css/main.106c287c.chunk.css.map": "/rapptr-submission/static/css/main.106c287c.chunk.css.map",
+    "static/js/2.5bd6d14d.chunk.js.LICENSE.txt": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df32256d.js",
+    "static/js/2.5bd6d14d.chunk.js",
+    "static/css/main.106c287c.chunk.css",
+    "static/js/main.7c13927c.chunk.js"
+  ]
+}
