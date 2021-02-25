@@ -8,7 +8,8 @@ import './login-form.styles.css';
 const LoginForm = props => {
 
 	// State of the login component.
-	// The email and the password of the current user and the current route
+	// The email and the password of the current user, current route
+	// and control variables.
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -18,7 +19,7 @@ const LoginForm = props => {
 	const [blurEmail, setBlurEmail] = useState(false);
 	const [blurPassword, setBlurPassword] = useState(false);
 
-	// useEffect hook is used to validate input!
+	// useEffect hook is used to validate input.
 	// Regex key for email.
 
 	useEffect(() => {
@@ -38,7 +39,7 @@ const LoginForm = props => {
 		}
 	},[password.length, blurPassword]);
 
-	// Validation functions for the onBlur event.
+	// Validation functions of email and password for the onBlur events.
 
 	const blurValidateEmail = (email) => {
 		const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -58,6 +59,58 @@ const LoginForm = props => {
 	 	}
 		setBlurPassword(true);
 	};
+
+	// This is the API call, appears to be blocked by CORS.
+	// This function would be called back in the onClick event of the Login button below
+	// to fetch the user.
+
+	const submitSignIn = () => {
+		fetch("https://dev.rapptrlabs.com/Tests/scripts/user-login.php", {
+		    method: "POST",
+		    headers: {
+		      "Content-Type": "application/json"
+		    },
+		    body: JSON.stringify({
+		      'email': email,
+		      'password': password
+		    })
+		  })
+		.then(response => response.json())
+		.then(data => console.log(data))
+		.catch(err => console.log)
+	};
+
+
+	// Session persistance. Function runs on submit, stores the email and password 
+	// in local storage.
+
+	const handleSubmit = () => {
+		if (isValidatedEmail && isValidatedPassword) {
+			const sessionToStore = {
+				email: email,
+				password: password
+			};
+			window.localStorage.setItem('storedSession', JSON.stringify(sessionToStore));
+		}
+		setRoute('list');
+	}
+
+	// Retrieves the stored email and password and validates them 
+	// before routing to the to-do list.
+
+	useEffect(() => {
+		const retrievedSession = window.localStorage.getItem('storedSession');
+		if (retrievedSession) {
+			const session = JSON.parse(retrievedSession);
+			blurValidateEmail(session.email);
+			blurValidatePassword(session.password);
+			if (isValidatedEmail && isValidatedPassword) {
+				setRoute('list');
+			}
+		} else {
+			setRoute('signin');
+		}
+	}, []);
 
 	// If route is set to "signin" the present component is rendered.
 	// If route changes from submitting the form, the To Do List is rendered.
@@ -115,10 +168,10 @@ const LoginForm = props => {
 				<ButtonPrime
 					type="submit"
 					value="Login"
-					onClick={() => setRoute('to-do-list')}
+					onClick={handleSubmit}
 					disabled={
 
-						//Crucial validation here at the Submit level
+						// Input validation for the Login button
 						
 						email === '' || password.length < 4 || 
 						!isValidatedEmail || !isValidatedPassword
@@ -134,3 +187,5 @@ const LoginForm = props => {
 };
 
 export default LoginForm;
+
+

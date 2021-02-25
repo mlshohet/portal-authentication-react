@@ -49,6 +49,13 @@ const ToDoList = props => {
 		}
 	};
 
+	// On sign out the storage is cleared and the route is set
+
+	const handleSignout = () => {
+		localStorage.clear();
+		setRoute('login')
+	}
+
 	// The list of items in state is iterated and visualized
 	// with the ListItem component
 
@@ -56,13 +63,14 @@ const ToDoList = props => {
 		route === 'list' ?
 		<div className="list">
 			<div className="list-header">
-				<span className="header-tagline">Don't Forget to Do Things!!!</span>
+				<span className="header-tagline">DON'T FORGET TO DO THINGS!!!</span>
 					<div 
 						className="list-sign-out"
-						onClick={() => setRoute('login')}
+						onClick={handleSignout}
 					>		SIGN OUT
 					</div>
 			</div> 
+			<div className="list-action">ADD SOME ITEMS TO YOUR TO-DO LIST</div>
 			<form className="list-input-container">
 				<FormInput 
 					id="input"

@@ -1,6 +1,4 @@
 .list {
-	font-family: 'Ubuntu';
-	font-size: 11px;
 	width:100%;
 }
 
@@ -29,13 +27,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: black;
-	padding: 15px;
+	background-color: rgb(214, 0, 127);
+	padding: 10px;
 	font-family: 'Roboto';
 }
 
 .header-tagline {
-	color: lightblue;
+	font-family: 'Droid Sans';
+	color: white;
+	font-style: uppercase;
 	font-size: 45px;
 	padding: 20px;
 
@@ -43,17 +43,28 @@
 
 @media screen and (max-width: 800px) {
 	.header-tagline {
-		font-size: 7vw;
+		padding: 10px;
+		font-size: 18px;
 	}
 } 
 
+.list-action {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px;
+	padding: 10px;
+	font-size: 14px;
+	color: rgb(214, 0, 127);
+}
 
 .list-sign-out {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	color: white;
-	font-size: 18px;
+	font-size: 14px;
+	font-weight: bold;
 	margin-right: 50px;
 	cursor: pointer;
 }

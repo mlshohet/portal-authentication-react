@@ -6,7 +6,7 @@ import './form-input.styles.css';
 
 // Form input field, reused in all pages.
 // Dynamically adds an icon, depending on the name passed to it.
-// Takes the passed name of the email and password props and the 
+// Takes the names of the email, the password and the 
 // isValidated props and decides dynamically 
 // which class of the input form to render.
 
