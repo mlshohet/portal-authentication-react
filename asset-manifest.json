@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/rapptr-submission/static/css/main.106c287c.chunk.css",
-    "main.js": "/rapptr-submission/static/js/main.7c13927c.chunk.js",
-    "main.js.map": "/rapptr-submission/static/js/main.7c13927c.chunk.js.map",
-    "runtime-main.js": "/rapptr-submission/static/js/runtime-main.df32256d.js",
-    "runtime-main.js.map": "/rapptr-submission/static/js/runtime-main.df32256d.js.map",
-    "static/js/2.5bd6d14d.chunk.js": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js",
-    "static/js/2.5bd6d14d.chunk.js.map": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js.map",
-    "index.html": "/rapptr-submission/index.html",
-    "static/css/main.106c287c.chunk.css.map": "/rapptr-submission/static/css/main.106c287c.chunk.css.map",
-    "static/js/2.5bd6d14d.chunk.js.LICENSE.txt": "/rapptr-submission/static/js/2.5bd6d14d.chunk.js.LICENSE.txt"
+    "main.css": "/portal-authentication-react/static/css/main.106c287c.chunk.css",
+    "main.js": "/portal-authentication-react/static/js/main.89d042f7.chunk.js",
+    "main.js.map": "/portal-authentication-react/static/js/main.89d042f7.chunk.js.map",
+    "runtime-main.js": "/portal-authentication-react/static/js/runtime-main.d38b4ad3.js",
+    "runtime-main.js.map": "/portal-authentication-react/static/js/runtime-main.d38b4ad3.js.map",
+    "static/js/2.f1e2b7fa.chunk.js": "/portal-authentication-react/static/js/2.f1e2b7fa.chunk.js",
+    "static/js/2.f1e2b7fa.chunk.js.map": "/portal-authentication-react/static/js/2.f1e2b7fa.chunk.js.map",
+    "index.html": "/portal-authentication-react/index.html",
+    "static/css/main.106c287c.chunk.css.map": "/portal-authentication-react/static/css/main.106c287c.chunk.css.map",
+    "static/js/2.f1e2b7fa.chunk.js.LICENSE.txt": "/portal-authentication-react/static/js/2.f1e2b7fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.df32256d.js",
-    "static/js/2.5bd6d14d.chunk.js",
+    "static/js/runtime-main.d38b4ad3.js",
+    "static/js/2.f1e2b7fa.chunk.js",
     "static/css/main.106c287c.chunk.css",
-    "static/js/main.7c13927c.chunk.js"
+    "static/js/main.89d042f7.chunk.js"
   ]
 }
