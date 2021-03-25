@@ -60,12 +60,11 @@ const LoginForm = props => {
 		setBlurPassword(true);
 	};
 
-	// This is the API call, appears to be blocked by CORS.
-	// This function would be called back in the onClick event of the Login button below
-	// to fetch the user.
+	// Submits to an API indicated in fetch, when bound to the Login button
 
-	const submitSignIn = () => {
-		fetch("https://dev.rapptrlabs.com/Tests/scripts/user-login.php", {
+	const submitSignIn = event => {
+		event.preventDefault();
+		fetch("", {
 		    method: "POST",
 		    headers: {
 		      "Content-Type": "application/json"
@@ -84,7 +83,8 @@ const LoginForm = props => {
 	// Session persistance. Function runs on submit, stores the email and password 
 	// in local storage.
 
-	const handleSubmit = () => {
+	const handleSubmit = event => {
+		event.preventDefault()
 		if (isValidatedEmail && isValidatedPassword) {
 			const sessionToStore = {
 				email: email,
@@ -110,7 +110,7 @@ const LoginForm = props => {
 		} else {
 			setRoute('signin');
 		}
-	}, []);
+	}, [isValidatedEmail, isValidatedPassword]);
 
 	// If route is set to "signin" the present component is rendered.
 	// If route changes from submitting the form, the To Do List is rendered.
@@ -118,7 +118,7 @@ const LoginForm = props => {
 	return (
 		route === 'signin' ?
 			<div className="login-container">
-			<h1 className="login-title">RAPPTR LABS</h1>
+			<h1 className="login-title">MEMO PORTAL</h1>
 			<span className="login-tagline">Sign in with Email and Password</span>
 			<form className="login-form">
 				<div className='form-input-container'>
@@ -127,7 +127,7 @@ const LoginForm = props => {
 						className="form-input"
 						name="email" 
 						type="email"
-						placeholder="user@rapptrlabs.com"
+						placeholder="user@memo.com"
 						value={email}
 						isValidatedEmail={isValidatedEmail}
 						onBlur={() => blurValidateEmail(email)}
