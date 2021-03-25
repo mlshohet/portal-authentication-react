@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portal-authentication-react/static/css/main.106c287c.chunk.css",
-    "main.js": "/portal-authentication-react/static/js/main.89d042f7.chunk.js",
-    "main.js.map": "/portal-authentication-react/static/js/main.89d042f7.chunk.js.map",
+    "main.js": "/portal-authentication-react/static/js/main.bd132b71.chunk.js",
+    "main.js.map": "/portal-authentication-react/static/js/main.bd132b71.chunk.js.map",
     "runtime-main.js": "/portal-authentication-react/static/js/runtime-main.d38b4ad3.js",
     "runtime-main.js.map": "/portal-authentication-react/static/js/runtime-main.d38b4ad3.js.map",
     "static/js/2.f1e2b7fa.chunk.js": "/portal-authentication-react/static/js/2.f1e2b7fa.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.d38b4ad3.js",
     "static/js/2.f1e2b7fa.chunk.js",
     "static/css/main.106c287c.chunk.css",
-    "static/js/main.89d042f7.chunk.js"
+    "static/js/main.bd132b71.chunk.js"
   ]
 }
